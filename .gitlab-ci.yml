@@ -12,6 +12,7 @@ build:apk:
       -projectPath $(pwd) \
       -quit \
       -batchmode \
+      -nographics \
       -buildTarget Android \
       -customBuildTarget Android \
       -customBuildPath ./Builds \
