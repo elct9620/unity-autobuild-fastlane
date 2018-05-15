@@ -1,5 +1,8 @@
 image: registry.5xruby.tw/elct9620/gitlab-unity3d-image-apk
 
+variables:
+  DEBIAN_FRONTEND: noninteractive
+
 build:apk:
   before_script:
     - apt-get install -qq -y xorg xvfb
