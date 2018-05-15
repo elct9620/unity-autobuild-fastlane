@@ -1,0 +1,6 @@
+image: elct9620/gitlab-unity3d-image-apk
+
+build:apk:
+  script:
+    - echo "HELLO WORLD"
+
