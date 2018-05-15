@@ -2,7 +2,7 @@ image: registry.5xruby.tw/elct9620/gitlab-unity3d-image-apk
 
 build:apk:
   before_script:
-    - echo 1 | apt-get install -y xorg xvfb
+    - apt-get install -qq -y xvfb
     - mkdir -p /root/.cache/unity3d
     - mkdir -p /root/.local/share/unity3d/Unity
     # Unity 2017+
