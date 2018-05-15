@@ -6,18 +6,18 @@ build:apk:
     - mkdir -p /root/.local/share/unity3d/Unity
     # Unity 2017+
     - echo $UNITY_LICENSE_CONTENT > /root/.local/share/unity3d/Unity/Unity_lic.ulf
-  script:
-    - mkdir -p ./Builds
-    - /usr/local/unity3d/Editor/Unity \
-    -projectPath $(pwd) \
-    -quit \
-    -batchmode \
-    -buildTarget Android \
-    -customBuildTarget Android \
-    -customBuildPath ./Builds \
-    -customBuildOptions AcceptExternalModificationsToPlayer \
-    -executeMethod BuildCommand.PerformBuild \
-    -logFile
+  script: |
+    mkdir -p ./Builds
+    /usr/local/unity3d/Editor/Unity \
+      -projectPath $(pwd) \
+      -quit \
+      -batchmode \
+      -buildTarget Android \
+      -customBuildTarget Android \
+      -customBuildPath ./Builds \
+      -customBuildOptions AcceptExternalModificationsToPlayer \
+      -executeMethod BuildCommand.PerformBuild \
+      -logFile
   artifacts:
     paths:
       - ./Builds
