@@ -2,17 +2,18 @@ image: registry.5xruby.tw/elct9620/gitlab-unity3d-image-apk
 
 build:apk:
   before_script:
+    - echo 1 | apt-get install -y xorg xvfb
     - mkdir -p /root/.cache/unity3d
     - mkdir -p /root/.local/share/unity3d/Unity
     # Unity 2017+
     - echo $UNITY_LICENSE_CONTENT > /root/.local/share/unity3d/Unity/Unity_lic.ulf
   script: |
     mkdir -p ./Builds
+    xvfb-run --server-args="-screen - 1024x768x24" \
     /usr/local/unity3d/Editor/Unity \
       -projectPath $(pwd) \
       -quit \
       -batchmode \
-      -nographics \
       -buildTarget Android \
       -customBuildTarget Android \
       -customBuildPath ./Builds \
