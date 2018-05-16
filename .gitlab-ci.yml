@@ -10,6 +10,7 @@ build:apk:
     - mkdir -p /root/.local/share/unity3d/Unity
     # Unity 2017+
     - echo $UNITY_LICENSE_CONTENT > /root/.local/share/unity3d/Unity/Unity_lic.ulf
+    - cat /root/.local/share/unity3d/Unity/Unity_lic.ulf
   script: |
     mkdir -p ./Builds
     xvfb-run --server-args="-screen - 1024x768x24" \
